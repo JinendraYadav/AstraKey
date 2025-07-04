@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import "tailwindcss";
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+:root {
+  --color-primary: #00adb5;
+  --color-secondary: #393e46;
+  --color-tertiary: #eeeeee;
+  --color-text: #222831;
+}
+
+.Toastify__toast--success {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.Toastify__toast--error {
+  background-color: crimson;
+  color: white;
+}

@@ -1,0 +1,33 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 32 32"
+  fill="none"
+  stroke="#00ADB5"
+  strokeWidth="1.5"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  className="w-6 h-6"
+>
+  <!-- Lock Body -->
+  <rect x="8" y="12" width="16" height="16" rx="3" />
+
+  <!-- Lock Shackle -->
+  <path d="M12 12V9a4 4 0 0 1 8 0v3" />
+
+  <!-- Sparkle inside lock -->
+  <path
+    d="
+      M16 14.5
+      C16.3 16.1, 16.9 17.1, 18 18.1
+      C19.1 19.1, 20.4 19.7, 22.2 20
+      C20.4 20.3, 19 20.9, 18 22
+      C17 23.1, 16.3 24.4, 16 26.2
+      C15.7 24.4, 15.1 23, 14 22
+      C12.9 21, 11.6 20.3, 9.8 20
+      C11.6 19.7, 13 19.1, 14 18.1
+      C15 17.1, 15.7 15.8, 16 14.5
+      Z"
+    fill="#00ADB5"
+    stroke="none"
+  />
+</svg>
