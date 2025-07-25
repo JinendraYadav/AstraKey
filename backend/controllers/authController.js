@@ -115,7 +115,7 @@ export const handleGoogleOAuth = async (req, res) => {
             const usernameExists = await User.findOne({ username: baseUsername });
 
             if (usernameExists) {
-                return res.redirect(`${process.env.CLIENT_URL}/choose-username?email=${email}`);
+                return res.redirect(`${process.env.FRONTEND_URL}/choose-username?email=${email}`);
             }
 
             user = await User.create({ email, username: baseUsername });
@@ -124,10 +124,10 @@ export const handleGoogleOAuth = async (req, res) => {
         const token = generateJWT(user._id, user.username);
         sendToken(res, token);
 
-        res.redirect(`${process.env.CLIENT_URL}/dashboard`);
+        res.redirect(`${process.env.FRONTEND_URL}/dashboard`);
     } catch (err) {
         console.error("Google OAuth error:", err);
-        res.redirect(`${process.env.CLIENT_URL}/login?error=oauth_failed`);
+        res.redirect(`${process.env.FRONTEND_URL}/login?error=oauth_failed`);
     }
 };
 
