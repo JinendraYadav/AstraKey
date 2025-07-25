@@ -19,7 +19,7 @@ const Manager = () => {
       let username = loggedInUsername;
 
       if (!username || updated) {
-        const userRes = await fetch("http://localhost:5000/api/auth/me", {
+        const userRes = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/me`, {
           method: "GET",
           credentials: "include",
         });
@@ -30,7 +30,7 @@ const Manager = () => {
         setLoggedInUsername(username);
       }
 
-      const pwRes = await fetch("http://localhost:5000/api/passwords", {
+      const pwRes = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/passwords`, {
         method: "GET",
         credentials: "include",
       });
@@ -62,7 +62,7 @@ const Manager = () => {
         setCurrentlyEditing(null);
         toast.success("Password updated successfully!");
       } else {
-        const res = await fetch("http://localhost:5000/api/passwords", {
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/passwords`, {
           method: "POST",
           credentials: "include", // Needed for sending cookies
           headers: {
@@ -98,7 +98,7 @@ const Manager = () => {
   const updatePassword = async (updated) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/passwords/${updated.id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/passwords/${updated.id}`,
         {
           method: "PUT",
           credentials: "include",
@@ -122,7 +122,7 @@ const Manager = () => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/passwords/${id}`, {
+      await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/passwords/${id}`, {
         method: "DELETE",
         credentials: "include",
       });
